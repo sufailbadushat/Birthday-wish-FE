@@ -5,7 +5,9 @@
 .outer {
     
     height: 100vh;
-    background: linear-gradient(to top, #ccccf5 50%, #7878e6 90%) no-repeat;
+    background: linear-gradient(to top, #5c7482, #2c3e50) no-repeat;
+   
+    background: linear-gradient(to top, #9797b8 50%, #7878e6 90%) no-repeat;
 }
 
 .panel-heading {
@@ -36,7 +38,8 @@ a:hover {
 }
 .panel {
     min-height: 400px;
-    box-shadow: 20px 20px 80px rgb(218, 218, 218);
+     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05),0 0 0 10px rgba(0, 0, 0, 0.05);
+     /* box-shadow: 20px 20px 80px rgb(255, 255, 255);  */
     border-radius: 12px;
     margin-top: 100px;
     margin-left: 0;

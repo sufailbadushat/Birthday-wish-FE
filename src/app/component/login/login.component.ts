@@ -45,7 +45,10 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.auth.signIn(this.loginForm.value).subscribe({
         next: (res) => {
-          console.log(res);
+          this.auth.storeToken(res.token);
+          this.auth.storeUser(res);
+         // const returnUrl = this.route.snapshot.queryParams['profile'] || '/';
+          
           this.toast.success({detail:"SUCCESS", summary:"Login success", duration:3000});
           this.loginForm.reset();
           this.route.navigate(['profile'])

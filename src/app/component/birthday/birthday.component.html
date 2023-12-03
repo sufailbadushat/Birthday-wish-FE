@@ -2,8 +2,8 @@
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-lg-4">
-            <div class="card card-margin">
+        <div class="col-lg-4" *ngFor="let emp of data">
+            <div class="card card-margin" >
                 <div class="card-body pt-4">
                     <div class="widget-49">
                         <div class="widget-49-title-wrapper ">
@@ -12,14 +12,14 @@
                             </div>
                             <div class="widget-49-meeting-info">
                                 <span class="widget-49-pro-title">
-                                    <h5>SUFAIL BADUSHA T</h5>
+                                    <h5>{{emp.name | uppercase }}</h5>
                                 </span>
                                 <span class="widget-49-meeting-time">Java full stack developer</span>
                             </div>
                         </div>
                         <ul class="widget-49-meeting-points">
-                            <li class="widget-49-meeting-item"><span>sufailbadusha@gmail.com</span></li>
-                            <li class="widget-49-meeting-item"><span>2000-11-12</span></li>
+                            <li class="widget-49-meeting-item"><span>{{emp.email}}</span></li>
+                            <li class="widget-49-meeting-item"><span>{{emp.dob}}</span></li>
 
                         </ul>
 
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4">
             <div class="card card-margin">
                 <div class="card-body pt-0">
                     <div class="widget-49 pt-4">
@@ -57,88 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="card card-margin">
-                <div class="card-body pt-4">
-                    <div class="widget-49">
-                        <div class="widget-49-title-wrapper ">
-                            <div class="widget-49-date-primary">
-                                <span class="widget-49-date-day">HBD</span>
-                            </div>
-                            <div class="widget-49-meeting-info">
-                                <span class="widget-49-pro-title">
-                                    <h5>SUFAIL BADUSHA T</h5>
-                                </span>
-                                <span class="widget-49-meeting-time">sufail@gmail.com</span>
-                            </div>
-                        </div>
-                        <ul class="widget-49-meeting-points">
-                            <li class="widget-49-meeting-item"><span>sufailbadusha@gmail.com</span></li>
-                            <li class="widget-49-meeting-item"><span>2000-11-12</span></li>
-
-                        </ul>
-
-                        <div class="widget-49-meeting-action">
-                            <button class="btn btn-sm btn-outline-success">Send Birthday wish</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card card-margin">
-                <div class="card-body pt-0">
-                    <div class="widget-49 pt-4">
-                        <div class="widget-49-title-wrapper">
-                            <div class="widget-49-date-success">
-                                <span class="widget-49-date-day">HBD</span>
-                            </div>
-                            <div class="widget-49-meeting-info">
-                                <span class="widget-49-pro-title">
-                                    <h5>SUFAIL BADUSHA T</h5>
-                                </span>
-                                <span class="widget-49-meeting-time">Software Engineer</span>
-                            </div>
-                        </div>
-                        <ul class="widget-49-meeting-points">
-                            <li class="widget-49-meeting-item"><span>sufail@gmail.com</span></li>
-                            <li class="widget-49-meeting-item"><span>2000-11-12</span></li>
-                        </ul>
-                        <div class="widget-49-meeting-action">
-                            <a class="btn btn-sm btn-outline-success">Send Birthday wish!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card card-margin">
-                <div class="card-body pt-4">
-                    <div class="widget-49">
-                        <div class="widget-49-title-wrapper ">
-                            <div class="widget-49-date-primary">
-                                <span class="widget-49-date-day">HBD</span>
-                            </div>
-                            <div class="widget-49-meeting-info">
-                                <span class="widget-49-pro-title">
-                                    <h5>SUFAIL BADUSHA T</h5>
-                                </span>
-                                <span class="widget-49-meeting-time">sufail@gmail.com</span>
-                            </div>
-                        </div>
-                        <ul class="widget-49-meeting-points">
-                            <li class="widget-49-meeting-item"><span>sufailbadusha@gmail.com</span></li>
-                            <li class="widget-49-meeting-item"><span>2000-11-12</span></li>
-
-                        </ul>
-
-                        <div class="widget-49-meeting-action">
-                            <button class="btn btn-sm btn-outline-success">Send Birthday wish</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+         -->
         
     </div>
 </div>

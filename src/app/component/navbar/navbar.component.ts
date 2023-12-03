@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgToastService } from 'ng-angular-popup';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  constructor(private auth: AuthService,
+    private toast: NgToastService) { }
+
+  logOut() {
+    this.auth.logOut();
+    this.toast.success({detail:"SUCCESS", summary:"Logout sucessful"});
+  }
 }

@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
       this.auth.signIn(this.loginForm.value).subscribe({
         next: (res) => {
           console.log(res);
@@ -53,14 +52,11 @@ export class LoginComponent implements OnInit {
         },
         error: (err) => {
          this.toast.error({detail:"ERROR", summary:err.error.message, duration: 5000});
-         //alert(err.error.message);
-         console.log(err.error);
-         
         },
       });
     } else {
       ValidateForm.validateAllFields(this.loginForm);
-      // alert("Please valid fileds");
+      // alert("Please enter valid fileds");
     }
   }
 

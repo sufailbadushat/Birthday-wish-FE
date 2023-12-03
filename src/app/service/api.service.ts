@@ -6,6 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  private BASE_URL: string = 'http://localhost:8081/';
 
+  constructor(private http:HttpClient){}
+
+  getEmployees() {
+    return this.http.get<any>(`${this.BASE_URL}admin/getAll`);
+  }
+
+  getBirthdayEmp() : Observable<any> {
+    return this.http.get<any>(`${this.BASE_URL}admin/birthday`);
+  }
 
 }

@@ -12,57 +12,16 @@
                             <th>Job Title</th>
                             <th>Email</th>
                             <th>DOB</th>
-
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let emp of employess;let i = index">
                         <tr>
-                            <td>1</td>
-                            <td>Vincent Williamson</td>
-                            <td>iOS Developer</td>
-                            <td>admin@gmail.com</td>
-                            <td>2000-11-12</td>
-
-
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Taylor Reyes</td>
-                            <td>UI/UX Developer</td>
-                            <td>admin@gmail.com</td>
-                            <td>2000-11-12</td>
-
-
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Justin Block</td>
-                            <td>Frontend Developer</td>
-                            <td>admin@gmail.com</td>
-                            <td>2000-11-12</td>
-
-
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Sean Guzman</td>
-                            <td>Web Designer</td>
-                            <td>admin@gmail.com</td>
-                            <td>2000-11-12</td>
-
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Keith Carter</td>
-                            <td>Graphic Designer</td>
-                            <td>admin@gmail.com</td>
-                            <td>2000-11-12</td>
-
-
-                        </tr>
-                     
-
-
+                            <td>{{i+1}}</td>
+                            <td>{{emp.name}}</td>
+                            <td>Software Engineer</td>
+                            <td>{{emp.email}}</td>
+                            <td>{{emp.dob}}</td>
+                        </tr>            
                     </tbody>
                 </table>
 

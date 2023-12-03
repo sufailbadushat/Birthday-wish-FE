@@ -13,7 +13,7 @@ export class AuthService {
     private http: HttpClient,
     private router: Router) { }
 
-  signIn(loginObj: any) {
+  signIn(loginObj: any){
     return this.http.post<any>(`${this.baseUrl}auth/signIn`, loginObj);
   }
 
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   getUser() {
-    const userString = localStorage.getItem('user');    
+    const userString = localStorage.getItem('user');
     return userString ? JSON.parse(userString) : null;
   }
 

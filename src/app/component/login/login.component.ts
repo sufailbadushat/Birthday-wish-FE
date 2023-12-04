@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import ValidateForm from 'src/app/helper/validateform';
 import { AuthService } from 'src/app/service/auth.service';
@@ -16,10 +16,11 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
   constructor(
-    private fb: FormBuilder, 
-    private auth: AuthService, 
-    private route: Router,
-    private toast:NgToastService) { }
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private toast: NgToastService) { }
 
   //  Password view and hide
   type: string = 'password';
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  data:any[] =[];
+  data: any[] = [];
 
 
   onSubmit() {
@@ -47,19 +48,22 @@ export class LoginComponent implements OnInit {
         next: (res) => {
           this.auth.storeToken(res.token);
           this.auth.storeUser(res);
-         // const returnUrl = this.route.snapshot.queryParams['profile'] || '/';
-          
-          this.toast.success({detail:"SUCCESS", summary:"Login success", duration:3000});
+          this.auth.storeRole(res.role);
+
+          this.toast.success({ detail: "SUCCESS", summary: "Login success", duration: 3000 });
           this.loginForm.reset();
-          this.route.navigate(['profile'])
+          // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile';
+          this.router.navigate(['profile'])
         },
         error: (err) => {
-         this.toast.error({detail:"ERROR", summary:err.error.message, duration: 5000});
+          err.error.message ?
+            this.toast.error({ detail: "ERROR", summary: err.error.message, duration: 5000 }) :
+            this.toast.error({ detail: "ERROR", summary: "Something went wrong!", duration: 3000 });
         },
       });
     } else {
+      this.toast.error({ detail: "ERROR", summary: "Please provide required fields!", duration: 5000 });
       ValidateForm.validateAllFields(this.loginForm);
-      // alert("Please enter valid fileds");
     }
   }
 

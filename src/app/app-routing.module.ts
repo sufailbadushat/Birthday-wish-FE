@@ -4,13 +4,36 @@ import { LoginComponent } from './component/login/login.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { AllEmployessComponent } from './component/all-employess/all-employess.component';
 import { BirthdayComponent } from './component/birthday/birthday.component';
+import { authGuard } from './guard/auth.guard';
+import { Role } from './model/role';
+import { roleGuard } from './guard/role.guard';
+
+
 
 const routes: Routes = [
-  {path:'login', component:LoginComponent},
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {path:'all-emp', component:AllEmployessComponent},
-  {path:'profile', component:ProfileComponent},
-  {path:'birthday', component:BirthdayComponent},
+  {
+    path: 'all-emp',
+    component: AllEmployessComponent,
+    canActivate: [authGuard],
+    data: { roles: [Role.ADMIN] }
+  },
+  {
+    path: 'profile', component: ProfileComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'birthday', component: BirthdayComponent,
+    canActivate: [authGuard],
+    data: { roles: [Role.ADMIN] }
+  },
+  // {
+  //   path: '**', component: ProfileComponent, canActivate:[authGuard]
+  // },
 ];
 
 @NgModule({

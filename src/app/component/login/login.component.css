@@ -5,9 +5,10 @@
 .outer {
     
     height: 100vh;
-    background: linear-gradient(to top, #5c7482, #2c3e50) no-repeat;
+    background: linear-gradient(to top, #000000, #a06fe5) no-repeat;
+    /* background: linear-gradient(to top, #000000, #a06fe5) no-repeat; */
    
-    background: linear-gradient(to top, #9797b8 50%, #7878e6 90%) no-repeat;
+    /* background: linear-gradient(to top, #9797b8 50%, #7878e6 90%) no-repeat; */
 }
 
 .panel-heading {

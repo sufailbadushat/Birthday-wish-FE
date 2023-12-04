@@ -2,31 +2,29 @@
 
 <div class="container">
     <div class="row mt-4">
-        <div class="col-lg-8 offset-lg-2">
-            <div class=" table-responsive">
-                <table class="table">
-                    <thead >
-                        <tr>
-                            <th></th>
-                            <th>Full Name</th>
-                            <th>Job Title</th>
-                            <th>Email</th>
-                            <th>DOB</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let emp of employess;let i = index">
-                        <tr>
-                            <td>{{i+1}}</td>
-                            <td>{{emp.name}}</td>
-                            <td>Software Engineer</td>
-                            <td>{{emp.email}}</td>
-                            <td>{{emp.dob}}</td>
-                        </tr>            
-                    </tbody>
-                </table>
+        <div class="col-lg-8 offset-lg-2 table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Full Name</th>
+                        <th>Job Title</th>
+                        <th>Email</th>
+                        <th>DOB</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let emp of employess; let i = index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.jobTitle}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>{{emp.dob}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
 
-            </div>
         </div>
     </div>
 </div>

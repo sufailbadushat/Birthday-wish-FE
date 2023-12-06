@@ -1,15 +1,25 @@
 <app-navbar></app-navbar>
 
 
+
+
+
 <div class="container ">
-    <div class="col-lg-6 offset-lg-3" >
-        <div class="card mt-4">
-            <h4 class="card-header">{{user.name}}</h4>
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card mt-4 text-center">
+            <h4 class="card-header">{{user.name | uppercase}}</h4>
             <div class="card-body">
+                <p>{{user.jobTitle}}</p>
                 <p>{{user.email}}</p>
                 <p>{{user.dob}}</p>
                 <p>{{user.role}}</p>
+                <p>{{user.id}}</p>
             </div>
         </div>
+        <div >
+            <h3>{{msg}}</h3>
+        </div>
     </div>
+
+
 </div>

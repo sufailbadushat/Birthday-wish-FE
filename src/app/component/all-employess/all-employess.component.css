@@ -1,0 +1,17 @@
+.demo{ font-family: 'Noto Sans', sans-serif; }
+
+
+
+.table thead tr th{
+    background-color: rgba(145, 99, 99, 0.2);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px;
+}
+.table tbody tr td{
+    color: #000000;
+    font-size: 15px;
+    padding: 10px 12px;
+}
+

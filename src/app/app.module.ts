@@ -13,6 +13,8 @@ import { AllEmployessComponent } from './component/all-employess/all-employess.c
 import { BirthdayComponent } from './component/birthday/birthday.component';
 import { NotificationComponent } from './component/notification/notification.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,11 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgToastModule
+    NgToastModule,
+    BrowserAnimationsModule,
+    ModalModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }, BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

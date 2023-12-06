@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
           this.auth.storeRole(res.role);
 
           //subscribe sse with id
-          this.sse.eventSubscribe(res.id);
+        //  this.sse.eventSubscribe(res.id);
 
           this.toast.success({ detail: "SUCCESS", summary: "Login success", duration: 3000 });
           this.loginForm.reset();

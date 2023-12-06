@@ -24,7 +24,7 @@
                         </ul>
 
                         <div class="widget-49-meeting-action">
-                            <a class="btn btn-sm btn-outline-danger" (click)="sendBirthday(emp.id)">Send Birthday wish!</a>
+                            <a class="btn btn-sm btn-outline-danger" (click)="openModal(template, emp.id)">Send Birthday wish!</a>
                         </div>
                     </div>
                 </div>
@@ -61,3 +61,25 @@
         
     </div>
 </div>
+
+
+
+<ng-template #template >
+    <div class="modal-header popup " style="text-align: center;">
+        <h4 class="modal-title">Send Birthday Wish !</h4>
+        <a class="close mb-2" (click)="modalRef.hide()">&times;</a>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <textarea id="textareaValue" formControlName="textareaValue" class="form-control" rows="10"
+                    placeholder="Wanna add custom birthday message, not required!"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary  py-1 " (click)="modalRef.hide()">Close</button>
+        <button type="button" class="btn btn-dark  py-1 px-3" (click)="onSubmit()">Send</button>
+    
+    </div>
+</ng-template>

@@ -19,8 +19,13 @@ export class ApiService {
     return this.http.get<any>(`${this.BASE_URL}admin/birthday`);
   }
 
-  dispatchEvent(userId: number): Observable<any> {
-    return this.http.get(`${this.BASE_URL}sse/sendEvent?userId=${userId}`, { observe: 'response', responseType: 'text' });
+  dispatchEvent(userId: number, desc:string): Observable<any> {
+
+    if(!desc){
+      desc = "Test We hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy! Hope your day goes great!"
+    }
+
+    return this.http.get(`${this.BASE_URL}sse/sendEvent?userId=${userId}&desc=${desc}`, { observe: 'response', responseType: 'text' });
   }
 
 }

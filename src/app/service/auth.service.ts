@@ -2,21 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { SseService } from './sse.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private baseUrl: string = 'http://localhost:8081/';
+  private BASE_URL: string = 'http://localhost:8081/';
+
   constructor(
     private http: HttpClient,
-    private router: Router) {
-
-  }
+    private router: Router
+  ) { }
 
   signIn(loginObj: any) {
-    return this.http.post<any>(`${this.baseUrl}auth/signIn`, loginObj);
+    return this.http.post<any>(`${this.BASE_URL}auth/signIn`, loginObj);
   }
 
 
@@ -24,9 +25,12 @@ export class AuthService {
     // const confirmation = confirm('Do you want to logout?');
     // if (confirmation) {
     localStorage.clear();
+
     this.router.navigate(['login']);
+  }
 
-
+  getBaseURL(): string {
+    return this.BASE_URL;
   }
 
   storeUser(user: any) {

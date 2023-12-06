@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import ValidateForm from 'src/app/helper/validateform';
 import { AuthService } from 'src/app/service/auth.service';
+import { SseService } from 'src/app/service/sse.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private router: Router,
     private route: ActivatedRoute,
-    private toast: NgToastService) { }
+    private toast: NgToastService,
+    private sse: SseService) { }
 
   //  Password view and hide
   type: string = 'password';
@@ -32,10 +34,13 @@ export class LoginComponent implements OnInit {
     this.isText ? (this.type = 'text') : (this.type = 'password');
   }
 
+
   ngOnInit() {
+
+
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['admin@gmail.com', Validators.required],
+      password: ['admin', Validators.required]
     })
   }
 
@@ -50,6 +55,9 @@ export class LoginComponent implements OnInit {
           this.auth.storeUser(res);
           this.auth.storeRole(res.role);
 
+          //subscribe sse with id
+        //  this.sse.eventSubscribe(res.id);
+
           this.toast.success({ detail: "SUCCESS", summary: "Login success", duration: 3000 });
           this.loginForm.reset();
           // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile';
@@ -61,6 +69,8 @@ export class LoginComponent implements OnInit {
             this.toast.error({ detail: "ERROR", summary: "Something went wrong!", duration: 3000 });
         },
       });
+
+
     } else {
       this.toast.error({ detail: "ERROR", summary: "Please provide required fields!", duration: 5000 });
       ValidateForm.validateAllFields(this.loginForm);

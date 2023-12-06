@@ -7,6 +7,7 @@ import { BirthdayComponent } from './component/birthday/birthday.component';
 import { authGuard } from './guard/auth.guard';
 import { Role } from './model/role';
 import { roleGuard } from './guard/role.guard';
+import { NotificationComponent } from './component/notification/notification.component';
 
 
 
@@ -30,6 +31,9 @@ const routes: Routes = [
     path: 'birthday', component: BirthdayComponent,
     canActivate: [authGuard],
     data: { roles: [Role.ADMIN] }
+  },
+  {
+    path: 'notification', component: NotificationComponent
   },
   // {
   //   path: '**', component: ProfileComponent, canActivate:[authGuard]

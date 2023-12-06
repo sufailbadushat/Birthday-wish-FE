@@ -105,3 +105,39 @@
 .widget-49 .widget-49-meeting-action a {
   text-transform: uppercase;
 }
+
+
+
+
+/* Model pop up css */
+.popup h4 {
+  font-family: Tahoma, Arial, sans-serif; 
+  /* font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; */
+  font-weight:700;
+}
+
+div {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  
+}
+
+
+.popup .close {
+  position: absolute;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup .close:hover {
+  color: rgb(35, 103, 162);
+}
+
+button{
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+}
+

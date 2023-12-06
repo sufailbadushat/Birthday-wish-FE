@@ -1,9 +1,8 @@
-
 <div class="outer">
     <div class="container">
         <div class="row">
             <div class="offset-md-2 col-lg-4  offset-lg-4 col-md-8">
-                <div class="panel border bg-white">
+                <div class="panel border bg-white pt-4">
                     <div class="panel-heading">
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
@@ -33,7 +32,7 @@
                             <small
                                 *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
                                 class="text-danger">*Password is required</small>
-                            <div class="form-inline fr mt-4"> <a id="forgot" data-bs-toggle="modal"
+                            <div class="form-inline fr mt-4 pt-4"> <a id="forgot" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal" class="font-weight-bold">Forgot password?</a> </div>
                             <button (click)="onSubmit()" type="submit"
                                 class="btn btn-primary btn-block mt-4 w-100">Login</button>

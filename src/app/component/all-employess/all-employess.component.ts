@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class AllEmployessComponent implements OnInit{
 
-  employess:any = {}
+  employess:any = []
   constructor(private api:ApiService) {}
 
   ngOnInit() {

@@ -11,6 +11,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { NgToastModule } from 'ng-angular-popup';
 import { AllEmployessComponent } from './component/all-employess/all-employess.component';
 import { BirthdayComponent } from './component/birthday/birthday.component';
+import { NotificationComponent } from './component/notification/notification.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     NavbarComponent,
     ProfileComponent,
     AllEmployessComponent,
-    BirthdayComponent
+    BirthdayComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

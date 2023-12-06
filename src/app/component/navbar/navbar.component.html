@@ -19,7 +19,10 @@
                 </li>
                 <li class="nav-item">
                     <a class=" nav-link" routerLink="/birthday" routerLinkActive="active" *ngIf="isAdmin">Birthday</a>
-                </li>
+                <!-- </li><li class="nav-item">
+                    <a class=" nav-link" routerLink="/notification" routerLinkActive="active" *ngIf="!isAdmin">Notifications</a>
+                </li> -->
+               
             </ul>
             <form class="d-flex">
                 <button class="btn btn-outline-success py-1" (click)="logOut()" type="submit">Logout</button>

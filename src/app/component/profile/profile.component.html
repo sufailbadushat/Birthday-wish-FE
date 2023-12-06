@@ -4,7 +4,7 @@
 
 
 
-<div class="container ">
+<div class="container" *ngIf="msg == null">
     <div class="col-lg-4 offset-lg-4">
         <div class="card mt-4 text-center">
             <h4 class="card-header">{{user.name | uppercase}}</h4>
@@ -16,10 +16,29 @@
                 <p>{{user.id}}</p>
             </div>
         </div>
-        <div >
+        <div>
             <h3>{{msg}}</h3>
         </div>
     </div>
 
 
+
+</div>
+
+<div class="body pt-4" *ngIf="msg!=null">
+    <div class="card card-birthday offset-lg-5 offset-md-4 offset-sm-3 offset-2">
+        <div class="back"></div>
+        <div class="front">
+            <div class="imgset">
+                <img width="100%"
+                    src="https://1.bp.blogspot.com/-Mgj9-rbs65E/XfMoPSD5gtI/AAAAAAAAURk/NBokE2gSS2cTSJ2em5lZ5hJDuTtRN7UVwCLcBGAsYHQ/s1600/2713997.png">
+            </div>
+        </div>
+        <div class="text-container">
+            <p id="head">{{msg.title | uppercase}} 🎂 <br> {{user.name}},</p>
+            <p >{{msg.description}}</p>
+           
+            <p class="bg-light" id="company">Team Eous !<span> 😎 </span></p>
+        </div>
+    </div>
 </div>

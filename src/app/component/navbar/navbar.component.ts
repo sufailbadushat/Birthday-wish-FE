@@ -19,7 +19,7 @@ export class NavbarComponent {
   }
 
   logOut() {
-    this.sse.unSubscribe(); // closing the sse event
+    // this.sse.unSubscribe(); // closing the sse event
     this.auth.logOut();
     this.toast.success({ detail: "SUCCESS", summary: "Logout sucessful" });
   }
@@ -27,4 +27,5 @@ export class NavbarComponent {
   get isAdmin() {
     return this.auth.getRole() === Role.ADMIN;
   }
+
 }

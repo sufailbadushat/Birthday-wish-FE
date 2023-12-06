@@ -10,9 +10,11 @@ import { SseService } from 'src/app/service/sse.service';
 })
 export class ProfileComponent implements OnInit {
   user: any;
-  msg!: string;
+  msg: any;
 
-  messages: string[] = [];
+  birthday:any;
+
+  //messages: string[] = [];
 
   constructor(
     private auth: AuthService,
@@ -23,10 +25,11 @@ export class ProfileComponent implements OnInit {
     
   }
   ngOnInit() {
-    this.sse.eventSubscribe(this.user.id).subscribe((msg) => {
-      this.messages.push(msg);
-      this.msg = msg;
-      this.toast.info({ detail: "Notification", summary: this.user.name + ", You have a message!" })
+    this.sse.eventSubscribe(this.user.id).subscribe((msgs:any) => {
+
+      this.msg = JSON.parse(msgs);
+      console.log(this.msg.title);
+      this.toast.info({ detail: "Notification", summary: this.user.name + ", You have a message!" , duration:6000})
     })
   }
 

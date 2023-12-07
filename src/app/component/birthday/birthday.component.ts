@@ -20,6 +20,7 @@ export class BirthdayComponent implements OnInit {
   modalRef!: BsModalRef;
   form!: FormGroup;
   private currentUserId!: number;
+  private currentUserName!: string;
 
 
   constructor(
@@ -49,8 +50,9 @@ export class BirthdayComponent implements OnInit {
 
   //Pop up model methods-----------------------------------------------------------------------
 
-  openModal(template: any, empId: number) {
+  openModal(template: any, empId: number, empName:string) {
     this.currentUserId = empId;
+    this.currentUserName = empName;
     this.modalRef = this.modalService.show(template);
   }
 
@@ -68,11 +70,12 @@ export class BirthdayComponent implements OnInit {
           this.form.reset();
 
         } else {
-          this.toast.warning({ detail: "SEND WISHES", summary: 'Employee is not subscribed!', duration: 2000 });
+          this.toast.warning({ detail: "SEND WISHES", summary: `${this.currentUserName} is not subscribed!`, duration: 2000 });
         }
       },
 
-      error: err => this.toast.error({ detail: "ERROR", summary: err.error })
+      error: err => {this.toast.error({ detail: "ERROR", summary: "Please login again!" }), console.log(err), this.modalRef.hide()}
+      // error: err => {this.toast.error({ detail: "ERROR", summary: err.error })}
     })
   }
   //---------------------------------------------------------------------------------------------

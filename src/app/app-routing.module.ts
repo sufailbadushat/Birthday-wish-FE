@@ -33,11 +33,8 @@ const routes: Routes = [
     data: { roles: [Role.ADMIN] }
   },
   {
-    path: 'notification', component: NotificationComponent
-  },
-  // {
-  //   path: '**', component: ProfileComponent, canActivate:[authGuard]
-  // },
+    path: '**', component: ProfileComponent, canActivate:[authGuard]
+   },
 ];
 
 @NgModule({

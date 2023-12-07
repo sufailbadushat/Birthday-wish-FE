@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
           this.auth.storeRole(res.role);
 
           //subscribe sse with id
-        //  this.sse.eventSubscribe(res.id);
+        // this.sse.eventSubscribe(res.id);
 
           this.toast.success({ detail: "SUCCESS", summary: "Login success", duration: 3000 });
           this.loginForm.reset();
@@ -64,6 +64,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['profile'])
         },
         error: (err) => {
+          localStorage.clear();
           err.error.message ?
             this.toast.error({ detail: "ERROR", summary: err.error.message, duration: 5000 }) :
             this.toast.error({ detail: "ERROR", summary: "Something went wrong!", duration: 3000 });

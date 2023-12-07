@@ -5,6 +5,7 @@
 }
 
 .card {
+  
     border: 0;
     box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
     -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
@@ -76,6 +77,7 @@
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
   color: #3c4142;
   font-size: 14px;
+  
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
@@ -112,14 +114,11 @@
 /* Model pop up css */
 .popup h4 {
   font-family: Tahoma, Arial, sans-serif; 
-  /* font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif; */
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   font-weight:700;
 }
 
-div {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
-  
-}
+
 
 
 .popup .close {

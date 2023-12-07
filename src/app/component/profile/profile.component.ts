@@ -21,21 +21,26 @@ export class ProfileComponent implements OnInit {
     private sse: SseService,
     private toast: NgToastService
   ) {
+
+    console.log("Profile constructor!");
     this.user = this.auth.getUser();
-    
-  }
-  ngOnInit() {
     this.sse.eventSubscribe(this.user.id).subscribe((msgs:any) => {
 
       this.msg = JSON.parse(msgs);
       console.log(this.msg.title);
       this.toast.info({ detail: "Notification", summary: this.user.name + ", You have a message!" , duration:6000})
     })
+    
+  }
+  ngOnInit() {
+    
+    
   }
 
 
-  // ngOnDestroy() {
-  //   this.sse.unSubscribe();
-  // }
+  ngOnDestroy() {
+    
+    
+  }
 
 }

@@ -22,7 +22,7 @@ export class ApiService {
   dispatchEvent(userId: number, desc:string): Observable<any> {
 
     if(!desc){
-      desc = "Test We hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy! Hope your day goes great!"
+      desc = "We hope your special day will bring you lots of happiness, love, and fun. You deserve them a lot. Enjoy! Hope your day goes great!"
     }
 
     return this.http.get(`${this.BASE_URL}sse/sendEvent?userId=${userId}&desc=${desc}`, { observe: 'response', responseType: 'text' });

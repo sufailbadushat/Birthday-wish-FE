@@ -30,12 +30,12 @@ export class SseService implements OnInit {
 
   eventSubscribe(userId: any): Observable<any> {
 
-    if (this.eventSource == null) {
+    // if (this.eventSource == null) {
       this.eventSource = new EventSource(`${this.BASE_URL}sse/subscribe?userId=${userId}`);
       this.eventSource.onopen = (event) => {
         console.log('SSE connection opened:', event);
       };
-    }
+    // }
     return new Observable(observer => {
 
       this.eventSource.addEventListener("wish", (event) => {

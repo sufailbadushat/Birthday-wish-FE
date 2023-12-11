@@ -22,7 +22,6 @@ export class ProfileComponent implements OnInit {
     private toast: NgToastService
   ) {
 
-    console.log("Profile constructor!");
     this.user = this.auth.getUser();
     this.sse.eventSubscribe(this.user.id).subscribe((msgs:any) => {
 

@@ -11,15 +11,15 @@ import { SseService } from 'src/app/service/sse.service';
 })
 export class NavbarComponent {
 
-
+  id:number;
 
   constructor(private auth: AuthService,
     private toast: NgToastService, private sse: SseService) {
-
+      this.id=auth.getUser().id;      
   }
 
   logOut() {
-    // this.sse.unSubscribe(); // closing the sse event
+    this.sse.unSubscribeEvent(); // closing the sse event
     this.auth.logOut();
     this.toast.success({ detail: "SUCCESS", summary: "Logout sucessful" });
   }

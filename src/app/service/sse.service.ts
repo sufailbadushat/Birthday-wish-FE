@@ -35,7 +35,7 @@ export class SseService implements OnInit {
       this.eventSource.onopen = (event) => {
         console.log('SSE connection opened:', event);
       };
-    // }
+    //  }
     return new Observable(observer => {
 
       this.eventSource.addEventListener("wish", (event) => {
@@ -54,9 +54,9 @@ export class SseService implements OnInit {
     // };
 
 
-  unSubscribe() {
-    console.log("Event closed!");
+  unSubscribeEvent() {
     this.eventSource.close();
+    console.log("Event closed!");
   }
 
 

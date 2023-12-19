@@ -8,6 +8,11 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class AllEmployessComponent implements OnInit{
 
+  seachByName!: string;
+  searchByJobRole!:string;
+  searchByEmail!:string;
+  searchByDOB!:string;
+
   employess:any = []
   constructor(private api:ApiService) {}
 

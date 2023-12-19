@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { ProfileComponent } from './component/profile/profile.component';
@@ -15,6 +15,7 @@ import { NotificationComponent } from './component/notification/notification.com
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     ProfileComponent,
     AllEmployessComponent,
     BirthdayComponent,
-    NotificationComponent
+    NotificationComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     HttpClientModule,
     NgToastModule,
     BrowserAnimationsModule,
-    ModalModule
+    ModalModule,
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }, BsModalService],
   bootstrap: [AppComponent]

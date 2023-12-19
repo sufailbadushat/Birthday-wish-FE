@@ -37,14 +37,14 @@
 
 <ng-template #template >
     <div class="modal-header popup " style="text-align: center;">
-        <h4 class="modal-title">Send Birthday Wish !</h4>
+        <h4 class="modal-title">WISH '{{currentUserName}}' !</h4>
         <a class="close mb-2" (click)="modalRef.hide()">&times;</a>
     </div>
     <div class="modal-body">
         <form [formGroup]="form">
             <div class="form-group">
                 <textarea id="textareaValue" formControlName="textareaValue" class="form-control" rows="10"
-                    placeholder="Wanna add custom birthday message, not required!"></textarea>
+                    placeholder="Wanna add custom birthday message (Optional !)"></textarea>
             </div>
         </form>
     </div>

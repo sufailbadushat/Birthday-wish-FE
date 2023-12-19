@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, NgZone, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SseService implements OnInit {
 
-  private BASE_URL!: string;
+  private BASE_URL: string = environment.apiUrl;
 
   eventSource!: EventSource;
 
@@ -20,7 +21,7 @@ export class SseService implements OnInit {
     private http: HttpClient,
     private auth: AuthService,
     private zone: NgZone
-  ) { this.BASE_URL = auth.getBaseURL(); }
+  ) {  }
 
   ngOnInit() {
   }

@@ -11,7 +11,7 @@
     height: 100vh;
     background: linear-gradient(to top, #000000, #a06fe5) no-repeat;
 
-    background: linear-gradient(to left, #000000, #895ec9, #000000) no-repeat;
+    /* background: linear-gradient(to left, #000000, #895ec9, #000000) no-repeat; */
 
     /* background: linear-gradient(to top, #9797b8 50%, #7878e6 90%) no-repeat; */
 }

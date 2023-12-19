@@ -14,13 +14,11 @@ import { SseService } from 'src/app/service/sse.service';
 export class BirthdayComponent implements OnInit {
 
   data: any = [];
-  private BASE_URL!: string;
-
   //Pop up property
   modalRef!: BsModalRef;
   form!: FormGroup;
   private currentUserId!: number;
-  private currentUserName!: string;
+  currentUserName!: string;
 
 
   constructor(
@@ -31,8 +29,6 @@ export class BirthdayComponent implements OnInit {
     private modalService: BsModalService,
     private formBuilder: FormBuilder,
   ) {
-    this.BASE_URL = auth.getBaseURL(); //Take backend url from auth service.
-
     this.form = this.formBuilder.group({
       textareaValue: [''],
     });

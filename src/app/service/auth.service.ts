@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SseService } from './sse.service';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private BASE_URL: string = 'http://localhost:8081/';
+  private BASE_URL: string = environment.apiUrl;
 
   constructor(
     private http: HttpClient,
@@ -29,9 +30,6 @@ export class AuthService {
     this.router.navigate(['login']);
   }
 
-  getBaseURL(): string {
-    return this.BASE_URL;
-  }
 
   storeUser(user: any) {
     const userString = JSON.stringify(user);

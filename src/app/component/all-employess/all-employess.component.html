@@ -15,8 +15,40 @@
                         <th>DOB</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let emp of employess; let i = index">
+                <tbody >
                     <tr>
+                        <td></td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control custom-style" placeholder="Search by Name"
+                                [(ngModel)]="seachByName"  >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control" placeholder="Search by Job role"
+                                [(ngModel)]="searchByJobRole"  >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control" placeholder="Search by Email"
+                                [(ngModel)]="searchByEmail"  >
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-container">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control" placeholder="Search by DOB"
+                                [(ngModel)]="searchByDOB"   >
+                            </div>
+                        </td>
+                    </tr>
+        
+                    <tr *ngFor="let emp of employess | search: seachByName:searchByJobRole:searchByEmail:searchByDOB ; let i = index">
                         <td>{{i+1}}</td>
                         <td>{{emp.name}}</td>
                         <td>{{emp.jobTitle}}</td>

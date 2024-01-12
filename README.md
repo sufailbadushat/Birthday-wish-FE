@@ -11,11 +11,11 @@
 ### Clone these Repositories and Build
 - Front End : Angular
 ```
-- git clone https://github.com/sufailbadushat/EOUS-birthday-wish-FE.git
+- git clone https://github.com/sufailbadushat/Birthday-wish-FE.git
 ```
 - Back End : Spring Boot
 ```
-- git clone https://github.com/sufailbadushat/EOUS-birthday-wish-BE.git
+- git clone https://github.com/sufailbadushat/Birthday-wish-BE.git
 ```
 ## -> Work Flow
 
